@@ -10,13 +10,14 @@ import com.squareup.otto.Bus;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import dagger.Module;
 import dagger.Provides;
 
 /**
  * Main App Module for Dependency Injection. Singleton definition is provided here
  * Created by cyn on 03/30/2017.
  */
-
+@Module
 public class BooklyModule {
 
   private Context context;

@@ -26,7 +26,6 @@ public class BooklyModule {
     this.context = context;
   }
 
-
   @Provides
   @Singleton
   Context provideContext() {

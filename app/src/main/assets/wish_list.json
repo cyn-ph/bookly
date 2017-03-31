@@ -1,0 +1,122 @@
+{
+  "wish_list": [
+    {
+      "id": 7832,
+      "name": "The Letter",
+      "author": "Kathryn Hughes",
+      "description": "The #1 EBook Bestseller. Every so often a love story comes along to remind us that sometimes, in our darkest hour, hope shines a candle to light our way. Discover THE LETTER by Kathryn Hughes, the Number One bestseller that has captured thousands of hearts worldwide. Perfect for fans of The Notebook by Nicholas Sparks. 'A wonderful, uplifting story' Lesley Pearse",
+      "categories": [
+        "Literature & Fiction"
+      ],
+      "rating": 2.2,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51VE8UMU35L.jpg"
+    },
+    {
+      "id": 2471,
+      "name": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "description": "I am not a recruiter. I am a software engineer. And as such, I know what it's like to be asked to whip up brilliant algorithms on the spot and then write flawless code on a whiteboard. I've been through this as a candidate and as an interviewer. ",
+      "categories": [
+        "Computer Science",
+        "Job Hunting & Careers"
+      ],
+      "rating": 3.7,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51F6Lwyq5JL._SX348_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 8621,
+      "name": "The Fifth Season",
+      "author": " N. K. Jemisin",
+      "description": "An ambitious book, with a shifting point of view, and a protagonist whose full complexity doesn't become apparent till toward the end of the novel. ... Jemisin's work itself is part of a slow but definite change in sci-fi and fantasy",
+      "categories": [
+        "Literature & Fiction",
+        "Science Fiction & Fantasy"
+      ],
+      "rating": 4.3,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/61EwRzbMAqL.jpg"
+    },
+    {
+      "id": 3127,
+      "name": "One of the Boys: A Novel",
+      "author": "Daniel Magarie",
+      "description": "A riveting and emotionally harrowing debut about two young brothers and their physically and psychologically abusive father—One of the Boys is 176 perfect, stunning pages by a major new talent.",
+      "categories": [
+        "Literature & Fiction"
+      ],
+      "rating": 1.6,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51rw3kom3GL._SX324_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 1743,
+      "name": "The Buried Book",
+      "author": "D. M. Pulley",
+      "description": "When Althea Leary abandons her nine-year-old son, Jasper, he’s left on his uncle’s farm with nothing but a change of clothes and a Bible. It’s 1952, and Jasper isn’t allowed to ask questions or make a fuss. He’s lucky to even have a home and must keep his mouth shut and his ears open to stay in his uncle’s good graces. No one knows where his mother went or whether she’s coming back. Desperate to see her again, he must take matters into his own hands. From the farm, he embarks on a treacherous search that will take him to the squalid hideaways of Detroit and back again, through tawdry taverns, peep shows, and gambling houses.",
+      "categories": [
+        "Literature & Fiction"
+      ],
+      "rating": 4.6,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51V7emDAhYL.jpg"
+    },
+    {
+      "id": 2456,
+      "name": "It",
+      "author": "Stephen King",
+      "description": "Welcome to Derry, Maine. It's a small city, a place as hauntingly familiar as your own hometown. Only in Derry the haunting is real. They were seven teenagers when they first stumbled upon the horror. Now they are grown-up men and women who have gone out into the big world to gain",
+      "categories": [
+        "Literature & Fiction",
+        "Mystery, Thriller & Suspense"
+      ],
+      "rating": 4.2,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51r9S8HY24L._AA300_.jpg"
+    },
+    {
+      "id": 4073,
+      "name": "The Breaking Light (Split City Book 1)",
+      "author": "Heather Hansen",
+      "description": "In a stratified society where contact with the sun is a luxury reserved for the elite, those kept prisoner in the darkness will do anything to find the light. Arden—beautiful, street-smart, and cynical—is one of the citizens of the lowest Level, known as Undercity, of an off-world colony. A blackout band traps Arden in her district, but as sister to the leader of the most powerful gang in Undercity, she has access to Above.",
+      "categories": [
+        "Teen & Young Adult",
+        "Science Fiction & Fantasy ",
+        "Romance"
+      ],
+      "rating": 3.7,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51b3qvzpVPL.jpg"
+    },
+    {
+      "id": 8631,
+      "name": "Good Night Stories for Rebel Girls",
+      "author": "Elena Favilli",
+      "description": "Vibrantly illustrated and truly inspirational, Good Night Stories for Rebel Girls tells the stories of 100 heroic women from Elizabeth I to Serena Williams What if the princess didn't marry Prince Charming but instead went on to be an astronaut? ",
+      "categories": [
+        "Romance",
+        "Teen & Young Adult"
+      ],
+      "rating": 2.7,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51xfdRl33zL._SX360_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 313,
+      "name": "Harry Potter and the Chamber of Secrets",
+      "author": "J.K. Rowling",
+      "description": "The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike.",
+      "categories": [
+        "Children's Books",
+        "Science Fiction & Fantasy"
+      ],
+      "rating": 4.9,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/61XGdLECZ5L._SX422_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 1679,
+      "name": "Introduction to Algorithms, 3rd Edition",
+      "author": "Thomas H. Cormen",
+      "description": "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor. Introduction to Algorithms uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in a pseudocode designed to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor.",
+      "categories": [
+        "Computer Science",
+        "Computers & Technology"
+      ],
+      "rating": 3.0,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/41-1VkO%2B1lL._SX359_BO1,204,203,200_.jpg"
+    }
+  ]
+}

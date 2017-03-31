@@ -1,7 +1,6 @@
-package com.bookly.profile.view;
+package com.bookly.common.view;
 
 import android.support.annotation.LayoutRes;
-import android.support.v4.media.RatingCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import com.bookly.R;
 import com.bookly.common.beans.BookElement;
-import com.bookly.common.view.BaseRecyclerAdapter;
 
 import java.util.List;
 
@@ -18,10 +16,10 @@ import java.util.List;
  * Created by cyn on 03/31/2017.
  */
 
-public class MyBooksAdapter extends BaseRecyclerAdapter<MyBooksAdapter.BookViewHolder,
+public class BooksAdapter extends BaseRecyclerAdapter<BooksAdapter.BookViewHolder,
     BookElement> {
 
-  public MyBooksAdapter(List<BookElement> itemList, @LayoutRes int layout) {
+  public BooksAdapter(List<BookElement> itemList, @LayoutRes int layout) {
     super(itemList, layout);
   }
 

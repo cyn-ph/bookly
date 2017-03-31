@@ -1,4 +1,4 @@
 # bookly
 Android app for getting book reviews and recommendations
 
-![HomeActivity](bookly/screenshot.png)
+![HomeActivity](https://github.com/cyn-ph/bookly/blob/master/screenshot.png)

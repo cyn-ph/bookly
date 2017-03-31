@@ -24,6 +24,7 @@ public class BooklyApplication extends Application {
     // Dagger
     booklyComponent = DaggerBooklyComponent
         .builder()
+        .booklyModule(new BooklyModule(this))
         .build();
 //     Realm
 //    RealmConfiguration configuration = new RealmConfiguration.Builder(this)

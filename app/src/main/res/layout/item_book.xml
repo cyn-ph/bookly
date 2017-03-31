@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="?attr/selectableItemBackground"
+  android:baselineAligned="false"
+  android:orientation="horizontal"
+  android:paddingBottom="@dimen/small"
+  android:paddingEnd="@dimen/medium"
+  android:paddingLeft="@dimen/medium"
+  android:paddingRight="@dimen/medium"
+  android:paddingStart="@dimen/medium"
+  android:paddingTop="@dimen/small">
+
+  <FrameLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <com.bookly.common.view.CircleImageView
+      android:id="@+id/img_book"
+      android:layout_width="@dimen/user_icon_size"
+      android:layout_height="@dimen/user_icon_size"
+      android:layout_gravity="center"
+      android:contentDescription="@null"
+      android:src="@drawable/ic_book" />
+  </FrameLayout>
+
+  <LinearLayout
+    android:id="@+id/book_info"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="5"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/small"
+    android:paddingRight="@dimen/small">
+
+    <TextView
+      android:id="@+id/txt_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      tools:text="The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography" />
+
+    <TextView
+      android:id="@+id/txt_author"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:text="Simon Singh" />
+
+    <TextView
+      android:id="@+id/txt_description"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/small"
+      android:ellipsize="end"
+      android:lines="3"
+      tools:text="In his first book since the bestselling Fermat's Enigma, Simon Singh offers the first sweeping history of encryption, tracing its evolution and revealing the dramatic effects codes have had on wars, nations, and individual lives. From Mary, Queen of Scots, trapped by her own code, to the Navajo Code Talkers who helped the Allies win World War II, to the incredible (and incredibly simple) logisitical breakthrough that made Internet commerce secure, The Code Book tells the story of the most powerful intellectual weapon ever known: secrecy." />
+
+    <android.support.v7.widget.AppCompatRatingBar
+      android:id="@+id/rating"
+      style="@style/Widget.AppCompat.RatingBar.Small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:isIndicator="true"
+      tools:rating="4" />
+
+  </LinearLayout>
+
+</LinearLayout>

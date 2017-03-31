@@ -1,5 +1,9 @@
 package com.bookly.di;
 
+import com.bookly.profile.di.ProfileComponent;
+import com.bookly.profile.di.ProfileModule;
+import com.bookly.profile.model.ProfileIntentService;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -11,4 +15,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = {BooklyModule.class})
 public interface BooklyComponent {
+  ProfileComponent plus(ProfileModule module);
+
+  void inject(ProfileIntentService service);
 }

@@ -1,0 +1,135 @@
+{
+  "name": "Cynthia Palma",
+  "preferences": [
+    "Arts & Photography",
+    "Computers & Technology",
+    "Engineering & Transportation",
+    "History",
+    "Literature & Fiction",
+    "Romance",
+    "Travel"
+  ],
+  "member_since": "2014-09-25",
+  "profile_picture": "https://unsplash.it/800/400?image=1062",
+  "books": [
+    {
+      "id": 1537,
+      "name": "The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography",
+      "author": "Simon Singh",
+      "description":"In his first book since the bestselling Fermat's Enigma, Simon Singh offers the first sweeping history of encryption, tracing its evolution and revealing the dramatic effects codes have had on wars, nations, and individual lives. From Mary, Queen of Scots, trapped by her own code, to the Navajo Code Talkers who helped the Allies win World War II, to the incredible (and incredibly simple) logisitical breakthrough that made Internet commerce secure, The Code Book tells the story of the most powerful intellectual weapon ever known: secrecy.",
+      "categories": [
+        "Computers & Technology",
+        "Politics & Social Sciences"
+      ],
+      "rating": 4.3,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51S0aQLkDCL.jpg"
+    },
+    {
+      "id": 227,
+      "name": "Le Petit Prince: French Edition",
+      "author": "Antoine de Saint-Exupéry",
+      "description":"In 2000 Harcourt proudly reissued Antoine de Saint-Exupéry's masterpiece, The Little Prince, in a sparkling new format. Newly translated by Pulitzer Prize-winning poet Richard Howard, this timeless classic was embraced by critics and readers across the country for its purity and beauty of expression. And Saint-Exupéry's beloved artwork was restored and remastered to present his work in its original and vibrant colors. ",
+      "categories": [
+        "Children's Books ",
+        "Literature & Fiction"
+      ],
+      "rating": 4.7,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51fieowCMpL.jpg"
+    },
+    {
+      "id": 3482,
+      "name": "Gameplan",
+      "author": "Sarah Harnisch",
+      "description":"With a passion for helping others and a modern approach to sharing the oils, Sarah Harnisch made it to Platinum in Young Living in just 17 months. Now she’s sharing her strategy in this densely-packed guide to take you from starter kit to Silver in Young Living",
+      "categories": [
+        "Business & Money"
+      ],
+      "rating": 2.3,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/41yDbNRH4mL.jpg"
+    },
+    {
+      "id": 1084,
+      "name": "A Criminal Defense",
+      "author": "William L. Myers Jr. ",
+      "description":"When a young reporter is found dead and a prominent Philadelphia businessman is accused of her murder, Mick McFarland finds himself involved in the case of his life. The defendant, David Hanson, was Mick’s close friend in law school, and the victim, a TV news reporter, had reached out to Mick for legal help only hours before her death.",
+      "categories": [
+        " Mystery, Thriller & Suspense"
+      ],
+      "rating": 3.8,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51jihRiWgFL.jpg"
+    },
+    {
+      "id": 4278,
+      "name": "Harry Potter and the Cursed Child, Parts 1 & 2",
+      "author": "J.K. Rowling",
+      "description":"While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places.",
+      "categories": [
+        "Literature & Fiction",
+        "Children's Books",
+        "Science Fiction & Fantasy"
+      ],
+      "rating": 5,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/916RAIVJSBL.jpg"
+    },
+    {
+      "id": 1836,
+      "name": "The Dry: A Novel",
+      "author": "Jane Harper",
+      "description":"After getting a note demanding his presence, Federal Agent Aaron Falk arrives in his hometown for the first time in decades to attend the funeral of his best friend, Luke. Twenty years ago when Falk was accused of murder, Luke was his alibi. Falk and his father fled under a cloud of suspicion, saved from prosecution only because of Luke’s steadfast claim that the boys had been together at the time of the crime. But now more than one person knows they didn’t tell the truth back then, and Luke is dead.",
+      "categories": [
+        "Mystery, Thriller & Suspense"
+      ],
+      "rating": 3.5,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/A1h14NkJGEL.jpg"
+    },
+    {
+      "id": 9723,
+      "name": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "description":"In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. Long ago the districts waged war on the Capitol and were defeated. As part of the surrender terms, each district agreed to send one boy and one girl to appear in an annual televised event called, \"The Hunger Games,\" a fight to the death on live TV. Sixteen-year-old Katniss Everdeen, who lives alone with her mother and younger sister, regards it as a death sentence when she is forced to represent her district in the Games. The terrain, rules, and level of audience participation may change but one thing is constant: kill or be killed.",
+      "categories": [
+        "Teens",
+        "Action & Adventure",
+        "Literature & Fiction"
+      ],
+      "rating": 4.5,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/41bOj-am1RL.jpg"
+    },
+    {
+      "id": 3486,
+      "name": "Fantastic Beasts and Where to Find Them",
+      "author": "J.K. Rowling",
+      "description":"Fantastic Beasts and Where to Find Them, Newt Scamander's classic compendium of magical creatures, has delighted generations of wizarding readers. Now, in this updated edition with a new foreword by Newt himself and the unveiling of six beasts little known outside the American wizarding community, Muggles too have the chance to discover where the Thunderbird lives, what the Puffskein eats, and why shiny objects should always be kept away from the Niffler.",
+      "categories": [
+        "Fairy Tales, Folk Tales & Myths",
+        "Science Fiction & Fantasy",
+        "Fantasy & Magic"
+      ],
+      "rating": 4.3,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/716Ta8Wo8CL.jpg"
+    },
+    {
+      "id": 7832,
+      "name": "The Letter",
+      "author": "Kathryn Hughes",
+      "description":"The #1 EBook Bestseller. Every so often a love story comes along to remind us that sometimes, in our darkest hour, hope shines a candle to light our way. Discover THE LETTER by Kathryn Hughes, the Number One bestseller that has captured thousands of hearts worldwide. Perfect for fans of The Notebook by Nicholas Sparks. 'A wonderful, uplifting story' Lesley Pearse",
+      "categories": [
+        "Literature & Fiction"
+      ],
+      "rating": 2.2,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51VE8UMU35L.jpg"
+    },
+    {
+      "id": 2471,
+      "name": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "description":"I am not a recruiter. I am a software engineer. And as such, I know what it's like to be asked to whip up brilliant algorithms on the spot and then write flawless code on a whiteboard. I've been through this as a candidate and as an interviewer. ",
+      "categories": [
+        "Computer Science",
+        "Job Hunting & Careers"
+      ],
+      "rating": 3.7,
+      "pic_url": "https://images-na.ssl-images-amazon.com/images/I/51F6Lwyq5JL._SX348_BO1,204,203,200_.jpg"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "metaVersion": 1,
+  "model": {
+    "name": "Bookly",
+    "version": 1,
+    "packagename": "com.bookly.common.beans",
+    "entities": [
+      {
+        "name": "Category",
+        "atributes": [
+          {
+            "name": "name",
+            "type": "String"
+          }
+        ],
+        "relationships": [
+          {
+            "name": "assignedTo",
+            "destinationEntity": "Book",
+            "inverseName": "categories",
+            "toMany": false
+          },
+          {
+            "name": "choosenBy",
+            "destinationEntity": "User",
+            "inverseName": "preferences",
+            "toMany": false
+          }
+        ]
+      },
+      {
+        "name": "Book",
+        "attributes": [
+          {
+            "name": "id",
+            "type": "Integer"
+          },
+          {
+            "name": "name",
+            "type": "String"
+          },
+          {
+            "name": "author",
+            "type": "String"
+          },
+          {
+            "name": "description",
+            "type": "String"
+          },
+          {
+            "name": "rating",
+            "type": "Float"
+          },
+          {
+            "name": "urlPicture",
+            "type": "String"
+          },
+          {
+            "name": "categories",
+            "type": "Category"
+          }
+        ],
+        "relationships": [
+          {
+            "name": "readBy",
+            "destinationEntity": "User",
+            "inverseName": "books",
+            "toMany": false
+          },
+          {
+            "name": "categories",
+            "destinationEntity": "Category",
+            "inverseName": "assignedTo",
+            "toMany": true
+          },
+          {
+            "name": "choosenBy",
+            "destinationEntity": "User",
+            "inverseName": "wishes",
+            "toMany": false
+          }
+        ]
+      },
+      {
+        "name": "User",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "String"
+          },
+          {
+            "name": "memberSince",
+            "type": "Date"
+          },
+          {
+            "name": "urlPicture",
+            "type": "String"
+          },
+          {
+            "name": "preferences",
+            "type": "Preference"
+          }
+        ],
+        "relationships": [
+          {
+            "name": "books",
+            "destinationEntity": "Book",
+            "inverseName": "readBy",
+            "toMany": true
+          },
+          {
+            "name": "preferences",
+            "destinationEntity": "Category",
+            "inverseName": "choosenBy",
+            "toMany": true
+          }
+        ]
+      },
+      {
+        "name": "WishList",
+        "relationships": [
+          {
+            "name": "wishes",
+            "destinationEntity": "Book",
+            "inverseName": "choosenBy",
+            "toMany": true
+          }
+        ]
+      }
+    ]
+  }
+}

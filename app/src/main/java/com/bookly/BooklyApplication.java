@@ -6,9 +6,6 @@ import com.bookly.di.BooklyComponent;
 import com.bookly.di.BooklyModule;
 import com.bookly.di.DaggerBooklyComponent;
 
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
-
 /**
  * Created by cyn on 03/30/2017.
  */
@@ -26,15 +23,10 @@ public class BooklyApplication extends Application {
         .builder()
         .booklyModule(new BooklyModule(this))
         .build();
-//     Realm
-//    RealmConfiguration configuration = new RealmConfiguration.Builder(this)
-    // this wipes the db when a model change is detected
-//        .deleteRealmIfMigrationNeeded()
-//        .build();
-//    Realm.setDefaultConfiguration(configuration);
+
   }
 
-  public BooklyComponent getAliadaComponent() {
+  public BooklyComponent getBooklyComponent() {
     return booklyComponent;
   }
 }

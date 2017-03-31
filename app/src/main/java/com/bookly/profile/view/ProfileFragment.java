@@ -17,6 +17,7 @@ import com.bookly.common.beans.BookElement;
 import com.bookly.common.beans.UserElement;
 import com.bookly.common.decorators.BaseItemDecoration;
 import com.bookly.common.view.MvpBaseFragment;
+import com.bookly.common.view.BooksAdapter;
 import com.bookly.di.BooklyComponent;
 import com.bookly.profile.di.ProfileModule;
 import com.bookly.profile.presenter.ProfilePresenter;
@@ -30,7 +31,7 @@ import java.util.LinkedList;
 
 public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileView> {
 
-  private MyBooksAdapter myBooksAdapter;
+  private BooksAdapter myBooksAdapter;
   private ProgressBar progressBar;
   private ImageView imgProfilePicture;
   private TextView txtUserName;
@@ -89,7 +90,7 @@ public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileVi
         R.drawable.item_decorator));
 
     // Create and sets the adapter
-    myBooksAdapter = new MyBooksAdapter(new
+    myBooksAdapter = new BooksAdapter(new
         LinkedList<BookElement>(), R.layout.item_book);
     bookList.setAdapter(myBooksAdapter);
 
@@ -108,7 +109,7 @@ public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileVi
   protected ProfilePresenter createPresenter() {
     BooklyComponent booklyComponent = ((BooklyApplication) getActivity().getApplication())
         .getAliadaComponent();
-    // Once we get the AliadaComponent we can get the presenter
+    // Once we get the Bookly component we can get the presenter
     return booklyComponent.plus(new ProfileModule()).getProfilePresenter();
   }
 

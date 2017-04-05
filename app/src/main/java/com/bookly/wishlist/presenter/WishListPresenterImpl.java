@@ -3,7 +3,6 @@ package com.bookly.wishlist.presenter;
 import com.bookly.common.beans.BookElement;
 import com.bookly.common.beans.WishListElement;
 import com.bookly.wishlist.model.WishListInteractor;
-import com.squareup.otto.Bus;
 
 import java.util.List;
 
@@ -23,8 +22,7 @@ public class WishListPresenterImpl extends WishListPresenter {
   private WishListInteractor wishListInteractor;
 
   @Inject
-  public WishListPresenterImpl(Bus bus, WishListInteractor wishListInteractor) {
-    super(bus);
+  public WishListPresenterImpl(WishListInteractor wishListInteractor) {
     this.wishListInteractor = wishListInteractor;
   }
 
@@ -44,6 +42,6 @@ public class WishListPresenterImpl extends WishListPresenter {
 
   private void onWishListLoaded(List<BookElement> books) {
     getView().hideProgressBar();
-    getView().fillWishList(books    );
+    getView().fillWishList(books);
   }
 }

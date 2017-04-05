@@ -2,7 +2,6 @@ package com.bookly.profile.presenter;
 
 import com.bookly.common.beans.UserElement;
 import com.bookly.profile.model.ProfileInteractor;
-import com.squareup.otto.Bus;
 
 import javax.inject.Inject;
 
@@ -20,8 +19,7 @@ public class ProfilePresenterImpl extends ProfilePresenter {
   private ProfileInteractor profileInteractor;
 
   @Inject
-  public ProfilePresenterImpl(Bus bus, ProfileInteractor profileInteractor) {
-    super(bus);
+  public ProfilePresenterImpl(ProfileInteractor profileInteractor) {
     this.profileInteractor = profileInteractor;
   }
 

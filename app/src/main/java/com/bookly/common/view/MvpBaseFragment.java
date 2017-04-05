@@ -40,18 +40,6 @@ public abstract class MvpBaseFragment<T extends BasePresenter<V>, V extends Base
   }
 
   @Override
-  public void onResume() {
-    super.onResume();
-    presenter.onResume();
-  }
-
-  @Override
-  public void onPause() {
-    super.onPause();
-    presenter.onPause();
-  }
-
-  @Override
   public void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
     presenter.onSaveInstanceState(outState);

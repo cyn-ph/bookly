@@ -1,31 +1,26 @@
 package com.bookly.common.model;
 
-import android.app.IntentService;
-import android.content.Intent;
-import android.support.annotation.Nullable;
+import android.content.Context;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by cyn on 03/31/2017.
+ * Created by cyn on 04/05/2017.
  */
 
-public class LoadJsonIntentService extends IntentService {
+public class LoadJsonInteractor {
 
-  public LoadJsonIntentService(String name) {
-    super(name);
-  }
+  private Context context;
 
-  @Override
-  protected void onHandleIntent(@Nullable Intent intent) {
-
+  public LoadJsonInteractor(Context context) {
+    this.context = context;
   }
 
   protected String loadJSONFromAsset(String jsonName) {
     String json = null;
     try {
-      InputStream is = getApplicationContext().getAssets().open(jsonName);
+      InputStream is = context.getAssets().open(jsonName);
       int size = is.available();
       byte[] buffer = new byte[size];
       is.read(buffer);

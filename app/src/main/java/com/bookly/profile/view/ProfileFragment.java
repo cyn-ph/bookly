@@ -108,7 +108,7 @@ public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileVi
   @Override
   protected ProfilePresenter createPresenter() {
     BooklyComponent booklyComponent = ((BooklyApplication) getActivity().getApplication())
-        .getAliadaComponent();
+        .getBooklyComponent();
     // Once we get the Bookly component we can get the presenter
     return booklyComponent.plus(new ProfileModule()).getProfilePresenter();
   }

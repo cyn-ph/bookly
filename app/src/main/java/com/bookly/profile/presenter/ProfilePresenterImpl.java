@@ -1,11 +1,15 @@
 package com.bookly.profile.presenter;
 
-import com.bookly.profile.model.ProfileIntentService;
+import com.bookly.common.beans.UserElement;
 import com.bookly.profile.model.ProfileInteractor;
 import com.squareup.otto.Bus;
-import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by cyn on 03/31/2017.
@@ -24,12 +28,19 @@ public class ProfilePresenterImpl extends ProfilePresenter {
   @Override
   public void getProfile() {
     getView().showProgressBar();
-    profileInteractor.loadProfile();
+    final Observable<UserElement> observable = profileInteractor.loadProfile();
+    observable.subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Consumer<UserElement>() {
+          @Override
+          public void accept(UserElement userElement) throws Exception {
+            onProfileFetched(userElement);
+          }
+        });
   }
 
-  @Subscribe
-  public void onProfileFetched(ProfileIntentService.ProfileLoadedEvent notificationsFetchedEvent) {
+  private void onProfileFetched(UserElement userElement) {
     getView().hideProgressBar();
-    getView().fillProfileInformation(notificationsFetchedEvent.getPayload());
+    getView().fillProfileInformation(userElement);
   }
 }

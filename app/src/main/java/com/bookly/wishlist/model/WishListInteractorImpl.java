@@ -1,29 +1,46 @@
 package com.bookly.wishlist.model;
 
 import android.content.Context;
-import android.content.Intent;
 
-import com.bookly.profile.model.ProfileIntentService;
+import com.bookly.common.beans.WishListElement;
+import com.bookly.common.model.LoadJsonInteractor;
+import com.google.gson.Gson;
+
+import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
+
+import io.reactivex.Observable;
 
 /**
  * Created by cyn on 03/31/2017.
  */
 
-public class WishListInteractorImpl implements WishListInteractor {
+public class WishListInteractorImpl extends LoadJsonInteractor implements WishListInteractor {
 
-  private Context context;
+  private Gson gson;
 
   @Inject
-  public WishListInteractorImpl(Context context) {
-    this.context = context;
+  public WishListInteractorImpl(Context context, Gson gson) {
+    super(context);
+    this.gson = gson;
   }
 
   @Override
-  public void loadProfile() {
+  public Observable<WishListElement> loadWishList() {
     // TODO: 03/31/2017 Add logic to read from DB instead of always load the json
-    Intent intent = new Intent(context, WishListIntentService.class);
-    context.startService(intent);
+    return Observable.fromCallable(new Callable<WishListElement>() {
+      @Override
+      public WishListElement call() throws Exception {
+        WishListElement wishList;
+        wishList = gson.fromJson(loadJSONFromAsset("wish_list.json"),
+            WishListElement.class);
+        if (wishList == null) {
+          wishList = new WishListElement();
+        }
+        return wishList;
+      }
+    });
   }
+
 }

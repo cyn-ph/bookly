@@ -1,35 +1,44 @@
 package com.bookly.profile.model;
 
 import android.content.Context;
-import android.content.Intent;
 
 import com.bookly.common.beans.UserElement;
+import com.bookly.common.model.LoadJsonInteractor;
 import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
+
+import io.reactivex.Observable;
 
 /**
  * Created by cyn on 03/31/2017.
  */
 
-public class ProfileInteractorImpl implements ProfileInteractor {
+public class ProfileInteractorImpl extends LoadJsonInteractor implements ProfileInteractor {
 
-  private Context context;
+  Gson gson;
 
   @Inject
-  public ProfileInteractorImpl(Context context) {
-    this.context = context;
+  public ProfileInteractorImpl(Context context, Gson gson) {
+    super(context);
+    this.gson = gson;
   }
 
   @Override
-  public void loadProfile() {
+  public Observable<UserElement> loadProfile() {
     // TODO: 03/31/2017 Add logic to read from DB instead of always load the json
-    Intent intent = new Intent(context, ProfileIntentService.class);
-    context.startService(intent);
+    return Observable.fromCallable(new Callable<UserElement>() {
+      @Override
+      public UserElement call() throws Exception {
+        UserElement userElement = gson.fromJson(loadJSONFromAsset("profile.json"),
+            UserElement.class);
+        if (userElement == null) {
+          userElement = new UserElement();
+        }
+        return userElement;
+      }
+    });
   }
-
-
 }

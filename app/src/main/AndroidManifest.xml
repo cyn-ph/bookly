@@ -21,13 +21,6 @@
       </intent-filter>
     </activity>
 
-    <service
-      android:name=".profile.model.ProfileIntentService"
-      android:exported="false" />
-
-    <service
-      android:name=".wishlist.model.WishListIntentService"
-      android:exported="false" />
   </application>
 
 </manifest>

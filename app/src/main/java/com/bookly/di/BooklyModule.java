@@ -2,14 +2,11 @@ package com.bookly.di;
 
 import android.content.Context;
 
-import com.bookly.AndroidBus;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
-import dagger.Component;
 import dagger.Module;
 import dagger.Provides;
 
@@ -38,9 +35,4 @@ public class BooklyModule {
     return new GsonBuilder().setPrettyPrinting().create();
   }
 
-  @Provides
-  @Singleton
-  Bus provideBus() {
-    return new AndroidBus();
-  }
 }

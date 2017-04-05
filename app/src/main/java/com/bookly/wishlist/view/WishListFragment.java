@@ -91,7 +91,7 @@ public class WishListFragment extends MvpBaseFragment<WishListPresenter, WishLis
   @Override
   protected WishListPresenter createPresenter() {
     BooklyComponent booklyComponent = ((BooklyApplication) getActivity().getApplication())
-        .getAliadaComponent();
+        .getBooklyComponent();
     // Once we get the Bookly component we can get the presenter
     return booklyComponent.plus(new WishListModule()).getWishListPresenter();
   }

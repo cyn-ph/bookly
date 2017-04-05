@@ -3,7 +3,7 @@
   "model": {
     "name": "Bookly",
     "version": 1,
-    "packagename": "com.bookly.common.beans",
+    "packageName": "com.bookly.common.beans",
     "entities": [
       {
         "name": "Category",
@@ -32,10 +32,6 @@
         "name": "Book",
         "attributes": [
           {
-            "name": "id",
-            "type": "Integer"
-          },
-          {
             "name": "name",
             "type": "String"
           },
@@ -54,10 +50,6 @@
           {
             "name": "urlPicture",
             "type": "String"
-          },
-          {
-            "name": "categories",
-            "type": "Category"
           }
         ],
         "relationships": [
@@ -95,10 +87,6 @@
           {
             "name": "urlPicture",
             "type": "String"
-          },
-          {
-            "name": "preferences",
-            "type": "Preference"
           }
         ],
         "relationships": [

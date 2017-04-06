@@ -2,7 +2,6 @@ package com.bookly.wishlist.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,12 +11,11 @@ import android.widget.ProgressBar;
 
 import com.bookly.BooklyApplication;
 import com.bookly.R;
-import com.bookly.common.beans.BookElement;
+import com.bookly.common.beans.Book;
 import com.bookly.common.decorators.BaseItemDecoration;
 import com.bookly.common.view.BooksAdapter;
 import com.bookly.common.view.MvpBaseFragment;
 import com.bookly.di.BooklyComponent;
-import com.bookly.profile.di.ProfileModule;
 import com.bookly.wishlist.di.WishListModule;
 import com.bookly.wishlist.presenter.WishListPresenter;
 
@@ -44,7 +42,7 @@ public class WishListFragment extends MvpBaseFragment<WishListPresenter, WishLis
     }
 
     @Override
-    public void fillWishList(List<BookElement> books) {
+    public void fillWishList(List<Book> books) {
       wishListAdapter.appendItemList(books);
     }
   };
@@ -75,7 +73,7 @@ public class WishListFragment extends MvpBaseFragment<WishListPresenter, WishLis
 
     // Create and sets the adapter
     wishListAdapter = new BooksAdapter(new
-        LinkedList<BookElement>(), R.layout.item_book);
+        LinkedList<Book>(), R.layout.item_book);
     bookList.setAdapter(wishListAdapter);
 
     // Progress bar

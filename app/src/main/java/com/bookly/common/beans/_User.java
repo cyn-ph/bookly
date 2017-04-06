@@ -2,70 +2,68 @@
 
 package com.bookly.common.beans;
 
-import com.github.dkharrat.nexusdata.core.ManagedObject;
-
 import java.util.Date;
 import java.util.Set;
+import com.github.dkharrat.nexusdata.core.ManagedObject;
 
 abstract class _User extends ManagedObject {
 
-  public interface Property {
-    String NAME = "name";
-    String MEMBER_SINCE = "memberSince";
-    String URL_PICTURE = "urlPicture";
-    String BOOKS = "books";
-    String PREFERENCES = "preferences";
-  }
+    public interface Property {
+        String NAME = "name";
+        String MEMBER_SINCE = "memberSince";
+        String URL_PICTURE = "urlPicture";
+        String PREFERENCES = "preferences";
+        String BOOKS = "books";
+    }
 
 
-  public String getName() {
-    return (String) getValue(Property.NAME);
-  }
+    public String getName() {
+        return (String)getValue(Property.NAME);
+    }
 
-  public void setName(String name) {
-    setValue(Property.NAME, name);
-  }
+    public void setName(String name) {
+        setValue(Property.NAME, name);
+    }
 
-  public Date getMemberSince() {
-    return (Date) getValue(Property.MEMBER_SINCE);
-  }
+    public Date getMemberSince() {
+        return (Date)getValue(Property.MEMBER_SINCE);
+    }
 
-  public void setMemberSince(Date memberSince) {
-    setValue(Property.MEMBER_SINCE, memberSince);
-  }
+    public void setMemberSince(Date memberSince) {
+        setValue(Property.MEMBER_SINCE, memberSince);
+    }
 
-  public String getUrlPicture() {
-    return (String) getValue(Property.URL_PICTURE);
-  }
+    public String getUrlPicture() {
+        return (String)getValue(Property.URL_PICTURE);
+    }
 
-  public void setUrlPicture(String urlPicture) {
-    setValue(Property.URL_PICTURE, urlPicture);
-  }
+    public void setUrlPicture(String urlPicture) {
+        setValue(Property.URL_PICTURE, urlPicture);
+    }
 
 
-  @SuppressWarnings("unchecked")
-  public Set<Book> getBooks() {
-    return (Set<Book>) getValue(Property.BOOKS);
-  }
+    @SuppressWarnings("unchecked")
+    public Set<Category> getPreferences() {
+        return (Set<Category>)getValue(Property.PREFERENCES);
+    }
 
-  public void setBooks(Set<Book> books) {
-    setValue(Property.BOOKS, books);
-  }
+    public void setPreferences(Set<Category> preferences) {
+        setValue(Property.PREFERENCES, preferences);
+    }
 
-  public void addBook(Book book) {
-    getBooks().add(book);
-  }
+    public void addPreference(Category preference) {
+        getPreferences().add(preference);
+    }
+    @SuppressWarnings("unchecked")
+    public Set<Book> getBooks() {
+        return (Set<Book>)getValue(Property.BOOKS);
+    }
 
-  @SuppressWarnings("unchecked")
-  public Set<Category> getPreferences() {
-    return (Set<Category>) getValue(Property.PREFERENCES);
-  }
+    public void setBooks(Set<Book> books) {
+        setValue(Property.BOOKS, books);
+    }
 
-  public void setPreferences(Set<Category> preferences) {
-    setValue(Property.PREFERENCES, preferences);
-  }
-
-  public void addPreference(Category preference) {
-    getPreferences().add(preference);
-  }
+    public void addBook(Book book) {
+        getBooks().add(book);
+    }
 }

@@ -1,7 +1,6 @@
 package com.bookly.wishlist.model;
 
-import com.bookly.common.beans.BookElement;
-import com.bookly.common.beans.WishListElement;
+import com.bookly.common.beans.Book;
 
 import java.util.List;
 
@@ -12,5 +11,5 @@ import io.reactivex.Observable;
  */
 
 public interface WishListInteractor {
-  Observable<WishListElement> loadWishList();
+  Observable<List<Book>> loadWishList();
 }

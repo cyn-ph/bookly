@@ -2,6 +2,7 @@ package com.bookly.di;
 
 import android.content.Context;
 
+import com.github.dkharrat.nexusdata.core.ObjectContext;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -18,9 +19,12 @@ import dagger.Provides;
 public class BooklyModule {
 
   private Context context;
+  private ObjectContext mainObjectContext;
 
-  public BooklyModule(Context context) {
+  public BooklyModule(Context context,
+      ObjectContext mainObjectContext) {
     this.context = context;
+    this.mainObjectContext = mainObjectContext;
   }
 
   @Provides
@@ -33,6 +37,12 @@ public class BooklyModule {
   @Singleton
   Gson provideGson() {
     return new GsonBuilder().setPrettyPrinting().create();
+  }
+
+  @Provides
+  @Singleton
+  ObjectContext providesMainObjectContext() {
+    return mainObjectContext;
   }
 
 }

@@ -1,7 +1,6 @@
 package com.bookly.wishlist.presenter;
 
-import com.bookly.common.beans.BookElement;
-import com.bookly.common.beans.WishListElement;
+import com.bookly.common.beans.Book;
 import com.bookly.wishlist.model.WishListInteractor;
 
 import java.util.List;
@@ -29,18 +28,18 @@ public class WishListPresenterImpl extends WishListPresenter {
   @Override
   public void getWishList() {
     getView().showProgressBar();
-    final Observable<WishListElement> wishListElementObservable = wishListInteractor.loadWishList();
+    final Observable<List<Book>> wishListElementObservable = wishListInteractor.loadWishList();
     wishListElementObservable.subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<WishListElement>() {
+        .subscribe(new Consumer<List<Book>>() {
           @Override
-          public void accept(WishListElement wishListElement) throws Exception {
-            onWishListLoaded(wishListElement.getBooks());
+          public void accept(List<Book> books) throws Exception {
+            onWishListLoaded(books);
           }
         });
   }
 
-  private void onWishListLoaded(List<BookElement> books) {
+  private void onWishListLoaded(List<Book> books) {
     getView().hideProgressBar();
     getView().fillWishList(books);
   }

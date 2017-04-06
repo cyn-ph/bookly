@@ -8,6 +8,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bookly.R;
+import com.bookly.common.beans.Book;
 import com.bookly.common.beans.BookElement;
 
 import java.util.List;
@@ -17,9 +18,9 @@ import java.util.List;
  */
 
 public class BooksAdapter extends BaseRecyclerAdapter<BooksAdapter.BookViewHolder,
-    BookElement> {
+    Book> {
 
-  public BooksAdapter(List<BookElement> itemList, @LayoutRes int layout) {
+  public BooksAdapter(List<Book> itemList, @LayoutRes int layout) {
     super(itemList, layout);
   }
 
@@ -29,7 +30,7 @@ public class BooksAdapter extends BaseRecyclerAdapter<BooksAdapter.BookViewHolde
   }
 
   @Override
-  protected void bindViewHolder(BookViewHolder holder, BookElement item) {
+  protected void bindViewHolder(BookViewHolder holder, Book item) {
     holder.txtName.setText(item.getName());
     holder.txtAuthor.setText(item.getAuthor());
     holder.txtDescription.setText(item.getDescription());

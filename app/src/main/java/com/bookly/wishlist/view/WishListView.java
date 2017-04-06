@@ -1,5 +1,6 @@
 package com.bookly.wishlist.view;
 
+import com.bookly.common.beans.Book;
 import com.bookly.common.beans.BookElement;
 import com.bookly.common.view.BaseView;
 
@@ -14,5 +15,5 @@ public interface WishListView extends BaseView {
 
   void showProgressBar();
 
-  void fillWishList(List<BookElement> books);
+  void fillWishList(List<Book> books);
 }

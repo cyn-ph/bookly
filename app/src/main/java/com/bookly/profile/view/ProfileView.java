@@ -1,6 +1,6 @@
 package com.bookly.profile.view;
 
-import com.bookly.common.beans.UserElement;
+import com.bookly.common.beans.User;
 import com.bookly.common.view.BaseView;
 
 /**
@@ -8,9 +8,11 @@ import com.bookly.common.view.BaseView;
  */
 
 public interface ProfileView extends BaseView {
-  public void showProgressBar();
+  void showProgressBar();
 
-  public void hideProgressBar();
+  void hideProgressBar();
 
-  public void fillProfileInformation(UserElement user);
+  void fillProfileInformation(User user);
+
+  void showError();
 }

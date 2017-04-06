@@ -1,6 +1,6 @@
 package com.bookly.profile.model;
 
-import com.bookly.common.beans.UserElement;
+import com.bookly.common.beans.User;
 
 import io.reactivex.Observable;
 
@@ -10,5 +10,5 @@ import io.reactivex.Observable;
 
 public interface ProfileInteractor {
 
-  Observable<UserElement> loadProfile();
+  Observable<User> loadProfile();
 }

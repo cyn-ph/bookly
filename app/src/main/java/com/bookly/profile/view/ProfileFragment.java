@@ -3,21 +3,22 @@ package com.bookly.profile.view;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bookly.BooklyApplication;
 import com.bookly.R;
-import com.bookly.common.beans.BookElement;
-import com.bookly.common.beans.UserElement;
+import com.bookly.common.beans.Book;
+import com.bookly.common.beans.User;
 import com.bookly.common.decorators.BaseItemDecoration;
-import com.bookly.common.view.MvpBaseFragment;
 import com.bookly.common.view.BooksAdapter;
+import com.bookly.common.view.MvpBaseFragment;
 import com.bookly.di.BooklyComponent;
 import com.bookly.profile.di.ProfileModule;
 import com.bookly.profile.presenter.ProfilePresenter;
@@ -49,11 +50,17 @@ public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileVi
     }
 
     @Override
-    public void fillProfileInformation(UserElement user) {
+    public void fillProfileInformation(User user) {
       txtUserName.setText(user.getName());
-      txtPreferences.setText(BooklyUtils.getStringFromList(user.getPreferences()));
+      txtPreferences.setText(BooklyUtils.getStringFromSet(user.getPreferences()));
       txtMemberSince.setText(user.getMemberSince().toString());
-      myBooksAdapter.appendItemList(user.getMyBooks());
+      myBooksAdapter.appendItemList(BooklyUtils.getListBookFromSet(user.getBooks()));
+    }
+
+    @Override
+    public void showError() {
+      Toast.makeText(getContext(), "Error while retrieving the info", Toast.LENGTH_SHORT)
+          .show();
     }
   };
 
@@ -91,7 +98,7 @@ public class ProfileFragment extends MvpBaseFragment<ProfilePresenter, ProfileVi
 
     // Create and sets the adapter
     myBooksAdapter = new BooksAdapter(new
-        LinkedList<BookElement>(), R.layout.item_book);
+        LinkedList<Book>(), R.layout.item_book);
     bookList.setAdapter(myBooksAdapter);
 
     // Progress bar

@@ -1,6 +1,6 @@
 package com.bookly.profile.presenter;
 
-import com.bookly.common.beans.UserElement;
+import com.bookly.common.beans.User;
 import com.bookly.profile.model.ProfileInteractor;
 
 import javax.inject.Inject;
@@ -26,18 +26,24 @@ public class ProfilePresenterImpl extends ProfilePresenter {
   @Override
   public void getProfile() {
     getView().showProgressBar();
-    final Observable<UserElement> observable = profileInteractor.loadProfile();
+    final Observable<User> observable = profileInteractor.loadProfile();
     observable.subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<UserElement>() {
+        .subscribe(new Consumer<User>() {
           @Override
-          public void accept(UserElement userElement) throws Exception {
+          public void accept(User userElement) throws Exception {
             onProfileFetched(userElement);
+          }
+        }, new Consumer<Throwable>() {
+          @Override
+          public void accept(Throwable throwable) throws Exception {
+            getView().hideProgressBar();
+            getView().showError();
           }
         });
   }
 
-  private void onProfileFetched(UserElement userElement) {
+  private void onProfileFetched(User userElement) {
     getView().hideProgressBar();
     getView().fillProfileInformation(userElement);
   }

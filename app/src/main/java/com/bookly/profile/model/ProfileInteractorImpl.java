@@ -27,9 +27,8 @@ import io.reactivex.Observable;
 
 public class ProfileInteractorImpl extends LoadJsonInteractor implements ProfileInteractor {
 
-  private final static String TAG = "ProfileInteractorImpl";
-  Gson gson;
-  ObjectContext objectContext;
+  private Gson gson;
+  private ObjectContext objectContext;
 
   @Inject
   public ProfileInteractorImpl(Context context, Gson gson,

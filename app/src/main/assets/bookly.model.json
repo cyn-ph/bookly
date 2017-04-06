@@ -7,7 +7,7 @@
     "entities": [
       {
         "name": "Category",
-        "atributes": [
+        "attributes": [
           {
             "name": "name",
             "type": "String"

@@ -32,6 +32,10 @@
         "name": "Book",
         "attributes": [
           {
+            "name": "id",
+            "type": "Int"
+          },
+          {
             "name": "name",
             "type": "String"
           },
@@ -54,9 +58,9 @@
         ],
         "relationships": [
           {
-            "name": "readBy",
-            "destinationEntity": "User",
-            "inverseName": "books",
+            "name": "wishedBy",
+            "destinationEntity": "WishList",
+            "inverseName": "wishes",
             "toMany": false
           },
           {
@@ -66,9 +70,9 @@
             "toMany": true
           },
           {
-            "name": "choosenBy",
+            "name": "readBy",
             "destinationEntity": "User",
-            "inverseName": "wishes",
+            "inverseName": "books",
             "toMany": false
           }
         ]
@@ -91,26 +95,27 @@
         ],
         "relationships": [
           {
-            "name": "books",
-            "destinationEntity": "Book",
-            "inverseName": "readBy",
-            "toMany": true
-          },
-          {
             "name": "preferences",
             "destinationEntity": "Category",
             "inverseName": "choosenBy",
+            "toMany": true
+          },
+          {
+            "name": "books",
+            "destinationEntity": "Book",
+            "inverseName": "readBy",
             "toMany": true
           }
         ]
       },
       {
         "name": "WishList",
+        "attributes": [],
         "relationships": [
           {
             "name": "wishes",
             "destinationEntity": "Book",
-            "inverseName": "choosenBy",
+            "inverseName": "wishedBy",
             "toMany": true
           }
         ]

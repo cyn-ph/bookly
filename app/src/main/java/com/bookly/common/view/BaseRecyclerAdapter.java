@@ -1,6 +1,7 @@
 package com.bookly.common.view;
 
 import android.support.annotation.LayoutRes;
+import android.support.annotation.VisibleForTesting;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public abstract class BaseRecyclerAdapter<T extends RecyclerView.ViewHolder, S> 
 
   @Override
   public T onCreateViewHolder(ViewGroup parent, int viewType) {
-    LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+    LayoutInflater inflater = getLayoutInflater(parent);
     View convertView = inflater.inflate(layout, parent, false);
     return createViewHolder(convertView);
   }
@@ -52,11 +53,6 @@ public abstract class BaseRecyclerAdapter<T extends RecyclerView.ViewHolder, S> 
     return itemList.size();
   }
 
-  public void updateItemList(List<S> newItemList) {
-    this.itemList = newItemList == null ? new LinkedList<S>() : newItemList;
-    notifyDataSetChanged();
-  }
-
   public void updateItemListWithAnimation(List<S> newItemList) {
     this.itemList = new LinkedList<>();
     for (S s : newItemList) {
@@ -65,7 +61,7 @@ public abstract class BaseRecyclerAdapter<T extends RecyclerView.ViewHolder, S> 
   }
 
   public void appendItemList(List<S> newItemList) {
-    if (this.itemList.size() > 0) {
+    if (!itemList.isEmpty()) {
       for (S item : newItemList) {
         addWithAnimation(item);
       }
@@ -74,11 +70,12 @@ public abstract class BaseRecyclerAdapter<T extends RecyclerView.ViewHolder, S> 
     }
   }
 
-  public List<S> getItemList() {
-    return itemList;
-  }
-
   protected abstract T createViewHolder(View convertView);
 
   protected abstract void bindViewHolder(T holder, S item);
+
+  @VisibleForTesting
+  protected LayoutInflater getLayoutInflater(ViewGroup parent) {
+    return LayoutInflater.from(parent.getContext());
+  }
 }

@@ -8,6 +8,7 @@ import com.bookly.common.beans.BookElement;
 import com.bookly.common.beans.WishList;
 import com.bookly.common.beans.WishListElement;
 import com.bookly.common.model.LoadJsonInteractor;
+import com.bookly.common.model.NexusDataHelper;
 import com.bookly.utils.BooklyUtils;
 import com.github.dkharrat.nexusdata.core.ObjectContext;
 import com.google.gson.Gson;
@@ -30,13 +31,15 @@ public class WishListInteractorImpl extends LoadJsonInteractor implements WishLi
   private static final String TAG = "WishListInteractorImpl";
   private Gson gson;
   private ObjectContext objectContext;
+  private NexusDataHelper nexusDataHelper;
 
   @Inject
   public WishListInteractorImpl(Context context, Gson gson,
       ObjectContext objectContext) {
-    super(context, objectContext);
+    super(context);
     this.gson = gson;
     this.objectContext = objectContext;
+    nexusDataHelper = new NexusDataHelper(objectContext);
   }
 
   @Override
@@ -65,7 +68,7 @@ public class WishListInteractorImpl extends LoadJsonInteractor implements WishLi
     //Converting each book
     Set<Book> books = new HashSet<>();
     for (BookElement bookElement : wishListElement.getBooks()) {
-      Book book = getBook(bookElement);
+      Book book = nexusDataHelper.getBook(bookElement);
       books.add(book);
     }
     // Create the main object

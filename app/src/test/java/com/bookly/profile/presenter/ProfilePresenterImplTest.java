@@ -4,7 +4,6 @@ import com.bookly.common.beans.User;
 import com.bookly.profile.model.ProfileInteractor;
 import com.bookly.profile.view.ProfileView;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +11,7 @@ import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -46,7 +46,18 @@ public class ProfilePresenterImplTest {
     verify(view).fillProfileInformation(mockUser);
   }
 
-  class ProfilePresenterImplTestClass extends ProfilePresenterImpl{
+  @Test
+  public void getProfile_Error() {
+    final Observable<User> mockObservable = Observable.error(mock(Throwable.class));
+    when(interactor.loadProfile()).thenReturn(mockObservable);
+
+    subject.getProfile();
+
+    verify(view).hideProgressBar();
+    verify(view).showError();
+  }
+
+  class ProfilePresenterImplTestClass extends ProfilePresenterImpl {
 
     public ProfilePresenterImplTestClass(ProfileInteractor profileInteractor) {
       super(profileInteractor);

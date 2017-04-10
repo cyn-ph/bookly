@@ -2,14 +2,12 @@ package com.bookly.di;
 
 import android.content.Context;
 
-import com.bookly.AndroidBus;
+import com.github.dkharrat.nexusdata.core.ObjectContext;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
-import dagger.Component;
 import dagger.Module;
 import dagger.Provides;
 
@@ -21,9 +19,12 @@ import dagger.Provides;
 public class BooklyModule {
 
   private Context context;
+  private ObjectContext mainObjectContext;
 
-  public BooklyModule(Context context) {
+  public BooklyModule(Context context,
+      ObjectContext mainObjectContext) {
     this.context = context;
+    this.mainObjectContext = mainObjectContext;
   }
 
   @Provides
@@ -40,7 +41,8 @@ public class BooklyModule {
 
   @Provides
   @Singleton
-  Bus provideBus() {
-    return new AndroidBus();
+  ObjectContext providesMainObjectContext() {
+    return mainObjectContext;
   }
+
 }
